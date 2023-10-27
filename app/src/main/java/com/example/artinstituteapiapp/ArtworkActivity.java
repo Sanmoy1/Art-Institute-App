@@ -55,8 +55,21 @@ public class ArtworkActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
         String date = intent.getStringExtra("date");
-        String artistName = intent.getStringExtra("artistName");
-        String artistCountryAndYear = intent.getStringExtra("artistCountryAndYear");
+        String artistName="";
+        String artistCountryAndYear="";
+        if (!intent.getStringExtra("artist").contains("\n"))
+        {
+            artistName=intent.getStringExtra("artist");
+            artistCountryAndYear="null";
+        }
+        else
+        {
+            String[] parts = intent.getStringExtra("artist").split("\\n");
+            artistName=parts[0];
+            artistCountryAndYear=parts[1];
+        }
+
+
         String imageUrl = intent.getStringExtra("imageUrl");
         String department = intent.getStringExtra("department");
         String galleryTitle = intent.getStringExtra("galleryTitle");
@@ -67,37 +80,47 @@ public class ArtworkActivity extends AppCompatActivity {
         String dimensions = intent.getStringExtra("dimensions");
         String creditLine = intent.getStringExtra("creditLine");
 
-        //Log.d("date",date);e
+
+
         if (date != null) {
-            Log.d("TAG", date);
+            Log.d("date", date);
         } else {
-            Log.d("TAG", "someVariable is null");
+            Log.d("date", "date is null");
         }
 
 
         // Set the retrieved data to the respective TextViews and ImageView
         titleTextView.setText(title);
         dateTextView.setText(date);
+
         artistNameTextView.setText(artistName);
         artistCountryAndYearTextView.setText(artistCountryAndYear);
 
         // Load the image using Picasso
         String picassoImageUrl="https://www.artic.edu/iiif/2/"+imageUrl+"/full/843,/0/default.jpg";
         Picasso.get().load(picassoImageUrl).into(artworkImageView);
+        artworkImageView.setOnClickListener(view -> {
+
+        });
 
         departmentTextView.setText(department);
-        galleryTitleTextView.setText(galleryTitle);
+        if (galleryTitle!=null) {
+            SpannableString galleryLink = new SpannableString(galleryTitle);
+            galleryLink.setSpan(new ClickableSpan() {
+                @Override
+                public void onClick(View widget) {
+                    // Handle gallery link click
+                    openGalleryInfo(galleryId);
+                }
+            }, 0, galleryLink.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            galleryTitleTextView.setText(galleryLink);
+        }
+        else {
+            galleryTitleTextView.setText("null");
+        }
 
-        // Create a gallery link and set it as a clickable link
-        SpannableString galleryLink = new SpannableString("Gallery Info");
-        galleryLink.setSpan(new ClickableSpan() {
-            @Override
-            public void onClick(View widget) {
-                // Handle gallery link click
-                openGalleryInfo(galleryId);
-            }
-        }, 0, galleryLink.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        galleryTitleTextView.setText(galleryLink);
+
+
         galleryTitleTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
         locationTextView.setText(location);

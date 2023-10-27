@@ -6,13 +6,15 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:gravity="center_horizontal"
-    android:background="#e0d7d1">
+    android:background="#e0d7d1"
+    android:scrollbars="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        >
 
         <ImageView
             android:layout_width="90dp"
@@ -23,12 +25,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="130dp">
+            android:layout_marginLeft="130dp"
+            >
 
             <TextView
                 android:id="@+id/titleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/cinzel"
 
                 android:text="Artwork Title"
                 android:textSize="20sp"
@@ -37,6 +41,8 @@
                 android:id="@+id/dateTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/cinzel"
+                android:textColor="@color/black"
                 android:layout_marginTop="10dp"
                 android:text="Artwork Date"/>
 
@@ -45,44 +51,51 @@
     </LinearLayout>
 
 
-
-
-
     <TextView
         android:id="@+id/artistNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Artist Name"/>
+        android:textSize="17sp"
+        android:fontFamily="@font/cinzel"
+        android:text="Artist Name"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/artistCountryAndYearTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="17sp"
         android:layout_marginTop="20dp"
-        android:text="Artist Country and Year"/>
+        android:fontFamily="@font/cinzel"
+        android:text="Artist Country and Year"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/artworkImageView"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_marginTop="16dp"
         android:adjustViewBounds="true"
+        android:contentDescription="Artwork Image"
         android:scaleType="centerCrop"
-        android:src="@drawable/bwlions"
-        android:contentDescription="Artwork Image"/>
+        android:src="@drawable/bwlions" />
 
     <TextView
         android:id="@+id/departmentTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Department"/>
+        android:textSize="17sp"
+        android:fontFamily="@font/cinzel"
+        android:text="Department"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/galleryTitleTextView"
         android:layout_width="wrap_content"
         android:layout_marginTop="20dp"
+        android:fontFamily="@font/cinzel"
 
         android:layout_height="wrap_content"
         android:text="Gallery Title"/>
@@ -97,21 +110,28 @@
     <TextView
         android:id="@+id/locationTextView"
         android:layout_width="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:text="Location"/>
+        android:layout_marginTop="20dp"
+        android:textSize="19sp"
+        android:fontFamily="@font/cinzel"
+        android:text="Location"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/typeAndMediumTextView"
         android:layout_width="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:text="Artwork Type and Medium"/>
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/cinzel"
+        android:text="Artwork Type and Medium"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/dimensionsTextView"
         android:layout_width="wrap_content"
         android:layout_marginTop="20dp"
+        android:textSize="17sp"
+        android:fontFamily="@font/cinzel"
         android:layout_height="wrap_content"
         android:text="Dimensions"/>
 
@@ -119,6 +139,8 @@
         android:id="@+id/creditLineTextView"
         android:layout_width="wrap_content"
         android:layout_marginTop="20dp"
+        android:textSize="17sp"
+        android:fontFamily="@font/cinzel"
         android:layout_height="wrap_content"
         android:text="Credit Line"/>
 

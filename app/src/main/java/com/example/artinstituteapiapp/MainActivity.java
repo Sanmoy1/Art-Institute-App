@@ -122,7 +122,8 @@ public class MainActivity extends AppCompatActivity {
                             intent.putExtra("galleryTitle", selectedArtwork.getGalleryTitle());
                             intent.putExtra("galleryId", selectedArtwork.getGalleryId());
                             intent.putExtra("location", selectedArtwork.getLocation());
-                            intent.putExtra("typeAndMedium", selectedArtwork.getTypeAndMedium());
+                            intent.putExtra("type", selectedArtwork.getartworkType());
+                            intent.putExtra("medium",selectedArtwork.getMedium_display());
                             intent.putExtra("dimensions", selectedArtwork.getDimensions());
                             intent.putExtra("creditLine", selectedArtwork.getCreditLine());
 
@@ -165,11 +166,18 @@ public class MainActivity extends AppCompatActivity {
                 String imageUrl = artworkData.getString("image_id");
                 String date=artworkData.getString("date_display");
                 String medium_display=artworkData.getString("medium_display");
+                String department_title=artworkData.getString("department_title");
+                String gallery_title=artworkData.getString("gallery_title");
+                String gallery_id=artworkData.getString("gallery_id");
+                String place_of_origin=artworkData.getString("place_of_origin");
+                String artwork_type_title=artworkData.getString("artwork_type_title");
+                String dimensions=artworkData.getString("dimensions");
+                String credit_line=artworkData.getString("credit_line");
 
 
 
                 // Create an Artwork object and add it to the list
-                Artwork artwork = new Artwork(title,artist,imageUrl);
+                Artwork artwork = new Artwork(title,artist,imageUrl,date,department_title,gallery_title,gallery_id,place_of_origin,artwork_type_title,medium_display,dimensions,credit_line);
                 artworkList.add(artwork);
             }
         } catch (JSONException e) {

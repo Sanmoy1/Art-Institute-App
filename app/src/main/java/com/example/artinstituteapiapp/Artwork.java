@@ -1,5 +1,7 @@
 package com.example.artinstituteapiapp;
 
+import java.security.PrivateKey;
+
 public class Artwork {
 
 
@@ -13,14 +15,24 @@ public class Artwork {
     private String galleryTitle;
     private String galleryId;
     private String location;
-    private String typeAndMedium;
+    private String artworktype;
+    private String medium_display;
     private String dimensions;
     private String creditLine;
-    public Artwork(String title,String artist,String imageUrl)
+    public Artwork(String title,String artist,String imageUrl, String date,String department,String galleryTitle, String galleryId, String location,String artworktype, String medium_display, String dimensions,String creditLine)
     {
         this.title=title;
         this.artist=artist;
         this.imageUrl=imageUrl;
+        this.date=date;
+        this.department=department;
+        this.galleryTitle=galleryTitle;
+        this.galleryId=galleryId;
+        this.location=location;
+        this.artworktype=artworktype;
+        this.medium_display=medium_display;
+        this.dimensions=dimensions;
+        this.creditLine=creditLine;
     }
 
 
@@ -92,13 +104,18 @@ public class Artwork {
         this.location = location;
     }
 
-    public String getTypeAndMedium() {
-        return typeAndMedium;
+    public String getartworkType() {
+        return artworktype;
     }
 
-    public void setTypeAndMedium(String typeAndMedium) {
-        this.typeAndMedium = typeAndMedium;
+
+    public void setartworkType(String artworktype) {
+        this.artworktype = artworktype;
     }
+
+    public String getMedium_display(){return medium_display;}
+
+    public void setMedium_display(){this.medium_display=medium_display;}
 
     public String getDimensions() {
         return dimensions;
