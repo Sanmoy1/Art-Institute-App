@@ -14,7 +14,7 @@ import java.util.List;
 
 public class ArtworkAdapter extends RecyclerView.Adapter<ArtworkAdapter.ArtworkViewHolder> {
     private final List<Artwork> artworkList;
-    //Context context;
+
 
     public ArtworkAdapter(List<Artwork> artworkList) {
         this.artworkList = artworkList;

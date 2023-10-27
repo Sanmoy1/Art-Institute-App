@@ -99,21 +99,20 @@ public class MainActivity extends AppCompatActivity {
                         artworkRecyclerView.setAdapter(new DefaultBackgroundAdapter());
                     } else {
 
-                        //Toast.makeText(this,"comeon",Toast.LENGTH_SHORT).show();
+
                         ArtworkAdapter adapter = new ArtworkAdapter(artworkList);
                         artworkRecyclerView.setAdapter(adapter);
                         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
                         artworkRecyclerView.setLayoutManager(layoutManager);
 
                         artworkRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, artworkRecyclerView, (view, position) -> {
-                            // Handle the item click
-                            //ArrayList<Artwork> artworkList = parseAndCreateArtworkObjects(String.valueOf(apiResponse));
+
                             Artwork selectedArtwork = artworkList.get(position);
 
-                            // Create an Intent to start ArtworkActivity
+
                             Intent intent = new Intent(MainActivity.this, ArtworkActivity.class);
 
-                            // Pass the selected artwork's details to ArtworkActivity
+
                             intent.putExtra("title", selectedArtwork.getTitle());
                             intent.putExtra("date", selectedArtwork.getDate());
                             intent.putExtra("artist", selectedArtwork.getArtist());
@@ -127,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                             intent.putExtra("dimensions", selectedArtwork.getDimensions());
                             intent.putExtra("creditLine", selectedArtwork.getCreditLine());
 
-                            // Start the ArtworkActivity with the selected artwork's details
+
                             startActivity(intent);
                         }));
 

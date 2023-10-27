@@ -50,6 +50,13 @@ public class ArtworkActivity extends AppCompatActivity {
         typeAndMediumTextView = findViewById(R.id.typeAndMediumTextView);
         dimensionsTextView = findViewById(R.id.dimensionsTextView);
         creditLineTextView = findViewById(R.id.creditLineTextView);
+        applogo=findViewById(R.id.applogo);
+
+        applogo.setOnClickListener(view -> {
+            Intent intent2 = new Intent(this, MainActivity.class);
+            intent2.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent2);
+        });
 
         // Retrieve data from the intent (passed from MainActivity)
         Intent intent = getIntent();
@@ -99,8 +106,15 @@ public class ArtworkActivity extends AppCompatActivity {
         // Load the image using Picasso
         String picassoImageUrl="https://www.artic.edu/iiif/2/"+imageUrl+"/full/843,/0/default.jpg";
         Picasso.get().load(picassoImageUrl).into(artworkImageView);
+        String finalArtistName = artistName;
+        String finalArtistCountryAndYear = artistCountryAndYear;
         artworkImageView.setOnClickListener(view -> {
-
+            Intent intent2= new Intent(ArtworkActivity.this,ImageActivity.class);
+            intent2.putExtra("title1", title);
+            intent2.putExtra("artistName", finalArtistName);
+            intent2.putExtra("artist_2nd", finalArtistCountryAndYear);
+            intent2.putExtra("imageurl",imageUrl);
+            startActivity(intent2);
         });
 
         departmentTextView.setText(department);

@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".ArtworkActivity"/>
         <activity android:name=".CopyrightActivity"/>
+        <activity android:name=".ImageActivity"/>
     </application>
 
 </manifest>

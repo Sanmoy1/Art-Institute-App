@@ -19,7 +19,7 @@ public class DefaultBackgroundAdapter extends RecyclerView.Adapter<DefaultBackgr
 
     @Override
     public void onBindViewHolder(@NonNull DefaultBackgroundViewHolder holder, int position) {
-        // No data binding required for the default background
+
     }
 
     @Override
