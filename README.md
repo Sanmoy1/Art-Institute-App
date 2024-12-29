@@ -18,7 +18,7 @@ This Android application allows users to search for artworks from the Art Instit
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/ArtInstituteAPIApp.git
+   git clone https://github.com/Sanmoy1/ArtInstituteAPIApp.git
    ```
 2. Open the project in Android Studio.
 3. Sync the project with Gradle files.
